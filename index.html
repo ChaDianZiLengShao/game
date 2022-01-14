@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="audio" src="./imgs/audio.m4a" loop hidden></audio>
+    <section class="container">
+      <div id="change"></div>
+      <div id="cont1" class="page">
+        <video src="./imgs/MTVideo.MP4" autoplay loop></video>
+        <img src="./imgs/p1.png" class="page-bg" alt="" />
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p1/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p1/2.png" alt="" />
+        </div>
+      </div>
+      <div id="cont2" class="page">
+        <video  src="./imgs/p2.mp4" id="video2" ></video>
+        <!-- <img src="./imgs/p2.png" class="page-bg" alt="" /> -->
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p2/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p2/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p2/3.png" alt="" />
+          <img class="text btn4" src="./imgs/zh/p2/4.png" alt="" />
+        </div>
+      </div>
+      <div id="cont3" class="page">
+        <img src="./imgs/p3.png" class="page-bg" alt="" />
+        <div class="futou"></div>
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p3/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p3/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p3/3.png" alt="" />
+          <img class="text btn4 foutou-img" src="./imgs/zh/p3/4.png" alt="" />
+          <img class="text btn5 foutou-img" src="./imgs/zh/p3/5.png" alt="" />
+        </div>
+      </div>
+      <div id="cont4" class="page">
+        <img src="./imgs/p4.png" class="page-bg" alt="" />
+        <div class="qian-btn"></div>
+        <img class="qian" src="./imgs/tong.png"></img>
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p4/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p4/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p4/3.png" alt="" />
+        </div>
+      </div>
+
+      <div id="cont5" class="page">
+        <img src="./imgs/p5.png" class="page-bg" alt="" />
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p5/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p5/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p5/3.png" alt="" />
+          <img class="text btn4" src="./imgs/zh/p5/4.png" alt="" />
+          <img class="text btn5" src="./imgs/zh/p5/5.png" alt="" />
+        </div>
+      </div>
+      <div id="cont6" class="page">
+        <img src="./imgs/p6.png" class="page-bg" alt="" />
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p6/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p6/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p6/3.png" alt="" />
+        </div>
+      </div>
+
+
+      <div id="cont7" class="page">
+        <img src="./imgs/p7.png" class="page-bg" alt="" />
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p7/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p7/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p7/3.png" alt="" />
+          <img class="text btn4" src="./imgs/zh/p7/4.png" alt="" />
+          <img class="text btn5" src="./imgs/zh/p7/5.png" alt="" />
+        </div>
+      </div>
+      <div id="cont8" class="page">
+        <img src="./imgs/p8.png" class="page-bg" alt="" />
+        <div class="page-btn">
+          <img class="text btn1" src="./imgs/zh/p8/1.png" alt="" />
+          <img class="text btn2" src="./imgs/zh/p8/2.png" alt="" />
+          <img class="text btn3" src="./imgs/zh/p8/3.png" alt="" />
+          <img class="text btn4" src="./imgs/zh/p8/4.png" alt="" />
+          <img class="text btn5" src="./imgs/zh/p8/5.png" alt="" />
+          <img class="text btn6" src="./imgs/zh/p8/6.png" alt="" />
+          <img class="text btn7" src="./imgs/zh/p8/7.png" alt="" />
+        </div>
+      </div>
+      <div id="cont9" class="page">
+        <img src="./imgs/p9.png" class="page-bg" alt="" />
+      </div>
+    </section>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+         setInterval(()=>{
+ 	document.getElementById("audio").play()
+         },100);
+        $('#change').on('click', function () {
+          let list = $('.text')
+          for (let i = 0; i < list.length; i++) {
+              const element = list[i];
+              let str = $(element).attr('src')
+              let isZH = str.includes('zh')
+              let newSrc = isZH ? str.replace('zh','en'):str.replace('en','zh')
+              $(element).attr('src',newSrc)
+          }
+        })
+        /*
+         * page1 click
+         */
+        $('#cont1 .btn2').on('click', function (e) {
+            $(this).hide().prev().show(200)
+        })
+        $('#cont1 .btn1').click(() => {
+              $('#cont1').hide()
+              $('#cont2').show(200)
+              $('#cont2 .btn1').show()
+              document.getElementById('video2').play()
+              document.getElementById("audio").play()
+        })
+        /*
+         * page2 click
+         */
+        $('#cont2 .text').on('click', function (e) {
+          $(this).hide().next().show(200)
+        })
+        $('#cont2 .btn4').click(() => {
+          $('#cont2').hide()
+          $('#cont3').show(200)
+        })
+        /*
+         * page3 click
+         */
+        $('#cont3 .futou').hide()
+        $('#cont3 .text').on('click', function (e) {
+          let btn3 = $(this).hasClass('btn3')
+          if (!btn3) {
+            $(this).hide().next().show(200)
+          }
+        })
+        $('#cont3 .btn3').click(() => {
+          $('#cont3 .futou').show()
+          $(this).hide()
+        })
+        $('#cont3 .futou').click(() => {
+          $('#cont3 .btn4').show(200)
+        })
+        $('#cont3 .btn5').click(() => {
+          $('#cont3').hide()
+          $('#cont4').show(200)
+        })
+        /*
+         * page4 click
+         */
+         $('#cont4 .qian').hide()
+         $('#cont4 .qian-btn').click(() => {
+          $('#cont4 .qian').show(200)
+        })
+        $('#cont4 .qian').click(()=>{
+              $('#cont4 .qian').attr('src','./imgs/tiao.png')
+              $('#cont4 .btn1').hide()
+              $('#cont4 .btn2').show(200)
+        })
+        $('#cont4 .btn2').on('click', function (e) {
+            $('#cont4 .qian').hide()
+            $(this).hide().next().show(200)
+        })
+        $('#cont4 .btn3').on('click', function (e) {
+            $('#cont4').hide()
+            $('#cont5').show(200)
+        })
+        /*
+         * page5 click
+         */
+         $('#cont5 .text').on('click', function (e) {
+            $(this).hide().next().show(200)
+        })
+        $('#cont5 .btn5').on('click', function (e) {
+            $('#cont5').hide()
+            $('#cont6').show(200)
+        })
+          /*
+         * page6 click
+         */
+        $('#cont6 .text').on('click', function (e) {
+            $(this).hide().next().show(200)
+        })
+        $('#cont6 .btn3').on('click', function (e) {
+            $('#cont6').hide()
+            $('#cont7').show(200)
+        })
+          /*
+         * page7 click
+         */
+         $('#cont7 .text').on('click', function (e) {
+            $(this).hide().next().show(200)
+            if($(this).hasClass('btn2')){
+                $('#cont7 .page-bg').attr('src','./imgs/p7_2.png')
+            }
+        })
+        $('#cont7 .btn5').on('click', function (e) {
+            $('#cont7').hide()
+            $('#cont8').show(200)
+        })
+
+           /*
+         * page8 click
+         */
+         $('#cont8 .text').on('click', function (e) {
+            $(this).hide().next().show(200)
+        })
+        $('#cont8 .btn7').on('click', function (e) {
+            $('#cont8').hide()
+            $('#cont9').show(200)
+            setTimeout(()=>{
+                $('#cont9').hide()
+                $('#cont1').show(0)
+                $('#cont1 .btn2').show(200)
+                $('#cont1 .btn1').hide(0)
+            },1000)
+        })
+        
+      })
+    </script>
+  </body>
+</html>

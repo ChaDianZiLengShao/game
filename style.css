@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+#cont1 {
+  display: block;
+}
+.page video,
+.page .page-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+}
+#change {
+  position: fixed;
+  right: 5vw;
+  top: 5vh;
+  z-index: 3;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  background: url(./imgs/play.png) no-repeat;
+  background-size: 100% 100%;
+}
+#cont1 .page-bg {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: auto;
+}
+.page-btn img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 150px;
+  z-index: 2;
+  cursor: url('./imgs/avy5k-6b2fy-001.ico'),auto;
+}
+.page-btn img.text {
+  display: none;
+}
+.page-btn img.btn1 {
+  display: block;
+}
+
+.futou {
+    position: absolute;
+    bottom: 14vh;
+    left: 23vw;
+    width: 100px;
+    height: 100px;
+  cursor: url('./imgs/avy5k-6b2fy-001.ico'),auto;
+    /* background: oldlace; */
+}
+.qian-btn{
+    position: absolute;
+    bottom: 27vh;
+    left: 53vw;
+    width: 100px;
+    height: 100px;
+  cursor: url('./imgs/avy5k-6b2fy-001.ico'),auto;
+
+}
+.qian{
+    position: absolute;
+    top: 10vh;
+    left: 43vw;
+    width: auto;
+    height: 60%;
+    cursor: url('./imgs/avy5k-6b2fy-001.ico'),auto;
+}
