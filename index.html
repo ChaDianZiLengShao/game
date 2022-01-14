@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <audio id="audio" src="./imgs/audio.m4a" loop hidden></audio>
+    <audio id="audio" src="./imgs/audio.m4a" autoplay loop hidden></audio>
     <section class="container">
       <div id="change"></div>
       <div id="cont1" class="page">
@@ -101,8 +101,8 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
-         setInterval(()=>{
- 	document.getElementById("audio").play()
+         setTimeout(()=>{
+ 	        document.getElementById("audio").play()
          },100);
         $('#change').on('click', function () {
           let list = $('.text')
